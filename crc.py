@@ -5,20 +5,20 @@ def main():
 #-----------------------------------------------------------------------------
 #Sender
 
-    user_dataword = str(raw_input("Input dataword in binary format: "))
+    #user_dataword = str(raw_input("Input dataword in binary format: "))
     divisor = str(raw_input("Input divisor in binary format: "))
-   
-    #user_dataword = '11010011101100'
-    
+
+    user_dataword = '11010011101100'
+
     print "\nSender:"
-    
+
     sender = Sender(user_dataword, divisor)
     sender.send()
-    
+
     print "arg_dataword:", sender.arg_dataword2
     print "remainder:", sender.remainder2
     print "codeword:", sender.codeword2
- 
+
 #-----------------------------------------------------------------------------
 #Channel
 
@@ -27,7 +27,7 @@ def main():
     channel = Channel(sender.codeword, rate=0.2)
     #Error Rate 20%, By Default 30%
     print "Throgh to the channel get channel codeword:", channel.ch_codeword2
-     
+
 #-----------------------------------------------------------------------------
 #Receiver
 
